@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Oraclecoon — Oracle d'animaux totems, par Bengacoon</title>
+<meta name="description" content="Oraclecoon : un oracle de 104 animaux totems pour l'introspection, la méditation et le bien-être. 100 % hors ligne, sans compte, sans publicité." />
+<style>
+  :root {
+    --nuit: #1b2238;          /* bleu nuit */
+    --nuit-clair: #2a3556;
+    --sauge: #8fae8b;         /* vert sauge */
+    --sauge-fonce: #5f7d5d;
+    --dore: #d6b46a;          /* doré */
+    --dore-clair: #ecd9a6;
+    --amethyste: #9a7bb5;     /* améthyste */
+    --sable: #f2ead9;         /* sable */
+    --sable-fonce: #e3d6bb;
+    --texte-clair: #f2ead9;
+    --texte-doux: #cdd3e0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--nuit);
+    background: var(--sable);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; }
+
+  .container {
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    background:
+      radial-gradient(circle at 20% 15%, rgba(214,180,106,0.20), transparent 45%),
+      radial-gradient(circle at 85% 30%, rgba(154,123,181,0.22), transparent 50%),
+      linear-gradient(160deg, var(--nuit) 0%, var(--nuit-clair) 100%);
+    color: var(--texte-clair);
+    text-align: center;
+    padding: 96px 0 110px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(2px 2px at 12% 30%, rgba(255,255,255,0.5), transparent),
+      radial-gradient(1.5px 1.5px at 70% 20%, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1.5px 1.5px at 40% 70%, rgba(255,255,255,0.35), transparent),
+      radial-gradient(2px 2px at 88% 65%, rgba(255,255,255,0.4), transparent),
+      radial-gradient(1.5px 1.5px at 25% 85%, rgba(255,255,255,0.3), transparent);
+    pointer-events: none;
+  }
+
+  .hero .container { position: relative; z-index: 1; }
+
+  .hero-icon {
+    width: 104px;
+    height: 104px;
+    border-radius: 26px;
+    margin: 0 auto 24px;
+    display: block;
+    background: rgba(242,234,217,0.08);
+    border: 1px solid rgba(214,180,106,0.45);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+    object-fit: cover;
+  }
+
+  .hero .brand {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 13px;
+    color: var(--dore);
+    margin-bottom: 14px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.1rem, 5vw, 3.4rem);
+    line-height: 1.15;
+    font-weight: 700;
+    margin-bottom: 18px;
+  }
+
+  .hero h1 .accent { color: var(--dore-clair); }
+
+  .hero p.lede {
+    font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+    color: var(--texte-doux);
+    max-width: 640px;
+    margin: 0 auto 36px;
+  }
+
+  .btn {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--dore) 0%, var(--dore-clair) 100%);
+    color: var(--nuit);
+    font-weight: 700;
+    text-decoration: none;
+    padding: 15px 34px;
+    border-radius: 40px;
+    font-size: 1.05rem;
+    box-shadow: 0 10px 30px rgba(214,180,106,0.35);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 38px rgba(214,180,106,0.5); }
+
+  .hero .soon {
+    display: block;
+    margin-top: 16px;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    color: var(--texte-doux);
+    text-transform: uppercase;
+  }
+
+  /* ---------- SECTIONS ---------- */
+  section { padding: 72px 0; }
+
+  .section-title {
+    text-align: center;
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    color: var(--nuit);
+    margin-bottom: 12px;
+  }
+  .section-sub {
+    text-align: center;
+    color: var(--sauge-fonce);
+    max-width: 620px;
+    margin: 0 auto 48px;
+    font-size: 1.05rem;
+  }
+
+  /* ---------- FONCTIONNALITÉS ---------- */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 22px;
+  }
+  .feature-card {
+    background: #fff;
+    border: 1px solid var(--sable-fonce);
+    border-radius: 18px;
+    padding: 28px 24px;
+    box-shadow: 0 6px 22px rgba(27,34,56,0.06);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .feature-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(27,34,56,0.12); }
+  .feature-card .emoji { font-size: 1.9rem; display: block; margin-bottom: 12px; }
+  .feature-card h3 { font-size: 1.15rem; color: var(--nuit); margin-bottom: 8px; }
+  .feature-card p { color: #4a5168; font-size: 0.97rem; }
+
+  /* ---------- DECKS ---------- */
+  .decks { background: var(--nuit); color: var(--texte-clair); }
+  .decks .section-title { color: var(--texte-clair); }
+  .decks .section-sub { color: var(--texte-doux); }
+
+  .deck-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 26px;
+  }
+  .deck-card {
+    background: linear-gradient(160deg, var(--nuit-clair), rgba(154,123,181,0.18));
+    border: 1px solid rgba(214,180,106,0.35);
+    border-radius: 20px;
+    padding: 34px 30px;
+  }
+  .deck-card .num {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--dore);
+    margin-bottom: 10px;
+  }
+  .deck-card h3 { font-size: 1.5rem; margin-bottom: 6px; }
+  .deck-card .count { color: var(--sauge); font-weight: 700; margin-bottom: 14px; display: block; }
+  .deck-card p { color: var(--texte-doux); }
+
+  .deck-total {
+    text-align: center;
+    margin-top: 38px;
+    font-size: 1.15rem;
+    color: var(--dore-clair);
+  }
+  .deck-total strong { font-size: 1.6rem; color: var(--dore); }
+
+  /* ---------- CAPTURES ---------- */
+  .shots {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+  }
+  .shot {
+    aspect-ratio: 9 / 16;
+    border-radius: 22px;
+    overflow: hidden;
+    background: linear-gradient(160deg, var(--nuit-clair), var(--amethyste));
+    border: 1px solid var(--sable-fonce);
+    box-shadow: 0 10px 28px rgba(27,34,56,0.14);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--texte-doux);
+    font-size: 0.85rem;
+    text-align: center;
+  }
+  .shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  /* ---------- CTA bas ---------- */
+  .cta-final {
+    background:
+      radial-gradient(circle at 50% 0%, rgba(214,180,106,0.18), transparent 55%),
+      linear-gradient(160deg, var(--sauge-fonce), var(--sauge));
+    color: #fff;
+    text-align: center;
+  }
+  .cta-final h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); margin-bottom: 16px; }
+  .cta-final p { max-width: 560px; margin: 0 auto 30px; color: #f2f6ef; }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    background: var(--nuit);
+    color: var(--texte-doux);
+    padding: 48px 0 40px;
+    font-size: 0.9rem;
+  }
+  footer .disclaimer {
+    background: rgba(154,123,181,0.14);
+    border: 1px solid rgba(214,180,106,0.3);
+    border-radius: 14px;
+    padding: 18px 22px;
+    margin-bottom: 26px;
+    color: var(--texte-clair);
+  }
+  footer .disclaimer strong { color: var(--dore-clair); }
+  footer .foot-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 22px;
+  }
+  footer a { color: var(--dore-clair); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+  footer .brand-foot { color: var(--dore); letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; }
+</style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container">
+      <!-- Remplacer src par l'icône de l'app (512x512) -->
+      <img class="hero-icon" src="assets/icone-512.png" alt="Icône Oraclecoon" />
+      <p class="brand">par Bengacoon</p>
+      <h1>Oracle<span class="accent">coon</span></h1>
+      <p class="lede">L'oracle des animaux totems. 104 cartes pour vous écouter, méditer et cheminer — un message animal à la fois.</p>
+      <a class="btn" href="#" aria-label="Télécharger sur Google Play">Bientôt sur Google&nbsp;Play</a>
+      <span class="soon">Application Android · 7,90 € (achat unique) · 100 % hors ligne · sans publicité</span>
+    </div>
+  </header>
+
+  <!-- FONCTIONNALITÉS -->
+  <section id="fonctionnalites">
+    <div class="container">
+      <h2 class="section-title">Un compagnon doux pour l'introspection</h2>
+      <p class="section-sub">Tout ce dont vous avez besoin pour un moment de calme et de guidance, dans une seule application apaisante.</p>
+      <div class="features">
+        <div class="feature-card">
+          <span class="emoji">🦌</span>
+          <h3>104 cartes</h3>
+          <p>Deux jeux d'animaux totems réunis, filtrables par deck ou explorés tous ensemble.</p>
+        </div>
+        <div class="feature-card">
+          <span class="emoji">✨</span>
+          <h3>Tirage immersif</h3>
+          <p>Éventail de cartes, mélange, retournement, et tirage double avec lecture de combinaison.</p>
+        </div>
+        <div class="feature-card">
+          <span class="emoji">📖</span>
+          <h3>Fiches riches</h3>
+          <p>Signification, message-clé, qualités, défis, rituel et affirmations pour chaque animal.</p>
+        </div>
+        <div class="feature-card">
+          <span class="emoji">🌅</span>
+          <h3>Animal du jour</h3>
+          <p>Une inspiration quotidienne renouvelée pour démarrer la journée en conscience.</p>
+        </div>
+        <div class="feature-card">
+          <span class="emoji">🧭</span>
+          <h3>Parcours guidés</h3>
+          <p>Avancez thème après thème, à votre rythme, pour approfondir votre cheminement.</p>
+        </div>
+        <div class="feature-card">
+          <span class="emoji">🔍</span>
+          <h3>Trouve ton totem</h3>
+          <p>Un questionnaire de découverte pour révéler l'animal qui vous ressemble.</p>
+        </div>
+        <div class="feature-card">
+          <span class="emoji">📝</span>
+          <h3>Journal personnel</h3>
+          <p>Notez vos tirages, ressentis et synchronicités — tout reste sur votre appareil.</p>
+        </div>
+        <div class="feature-card">
+          <span class="emoji">🌿</span>
+          <h3>Mode thérapeute</h3>
+          <p>Un espace dédié pour accompagner vos séances et vos consultant·es.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LES DEUX DECKS -->
+  <section class="decks" id="decks">
+    <div class="container">
+      <h2 class="section-title">Deux decks, un seul voyage</h2>
+      <p class="section-sub">Choisissez le jeu qui vous appelle, ou mêlez les deux pour des tirages plus riches.</p>
+      <div class="deck-grid">
+        <div class="deck-card">
+          <p class="num">Deck I</p>
+          <h3>Les Animaux Totems</h3>
+          <span class="count">52 cartes</span>
+          <p>Le jeu fondateur : les grands esprits animaux et leurs messages essentiels pour vous guider au quotidien.</p>
+        </div>
+        <div class="deck-card">
+          <p class="num">Deck II</p>
+          <h3>Le second oracle</h3>
+          <span class="count">52 cartes</span>
+          <p>Un jeu complémentaire qui enrichit votre bestiaire intérieur — dont le nouveau Renard Polaire.</p>
+        </div>
+      </div>
+      <p class="deck-total"><strong>104 cartes</strong> à explorer · filtre Deck&nbsp;I / Deck&nbsp;II / Tous</p>
+    </div>
+  </section>
+
+  <!-- CAPTURES -->
+  <section id="apercu">
+    <div class="container">
+      <h2 class="section-title">Un aperçu de l'expérience</h2>
+      <p class="section-sub">Une atmosphère forêt et clair de lune, dans des teintes bleu nuit, vert sauge, doré et améthyste.</p>
+      <div class="shots">
+        <!-- Remplacer chaque src par une capture d'écran (ex. 1080x1920) -->
+        <div class="shot"><img src="assets/capture-1.png" alt="Tirage immersif" onerror="this.style.display='none';this.parentNode.append('Capture 1 — Tirage immersif')" /></div>
+        <div class="shot"><img src="assets/capture-2.png" alt="Fiche animal" onerror="this.style.display='none';this.parentNode.append('Capture 2 — Fiche animal')" /></div>
+        <div class="shot"><img src="assets/capture-3.png" alt="Bibliothèque et filtres" onerror="this.style.display='none';this.parentNode.append('Capture 3 — Bibliothèque')" /></div>
+        <div class="shot"><img src="assets/capture-4.png" alt="Animal du jour" onerror="this.style.display='none';this.parentNode.append('Capture 4 — Animal du jour')" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-final">
+    <div class="container">
+      <h2>Laissez l'animal venir à vous 🐾</h2>
+      <p>Ouvrez l'application, respirez, tirez une carte. Sans compte, sans publicité, sans connexion.</p>
+      <a class="btn" href="#">Bientôt sur Google&nbsp;Play</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="disclaimer">
+        <strong>Avertissement.</strong> Oraclecoon est une œuvre de bien-être symbolique, destinée à l'introspection et au plaisir. Elle ne prédit pas l'avenir de manière certaine et ne remplace en aucun cas un avis ou un accompagnement médical, psychologique ou thérapeutique professionnel.
+      </div>
+      <div class="foot-bottom">
+        <span class="brand-foot">Bengacoon</span>
+        <span>
+          <a href="politique-confidentialite-FR.md">Politique de confidentialité</a>
+          &nbsp;·&nbsp;
+          <a href="mailto:jdviallat@gmail.com">Contact</a>
+        </span>
+        <span>© 2026 Bengacoon</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
