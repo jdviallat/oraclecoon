@@ -1,6 +1,6 @@
 {
-  "versionCode": 10,
-  "versionName": "1.3.0",
-  "url": "https://bengacoon.com/apps/oraclecoon/Oraclecoon-1.3.0.apk",
-  "notes": "Tirage à 3 cartes (passé/présent/futur) et paiement in-app."
+  "versionCode": 11,
+  "versionName": "1.4.0",
+  "url": "https://jdviallat.github.io/oraclecoon/dl/Oraclecoon-1.4.0.apk",
+  "notes": "Tirage à 3 cartes (passé/présent/futur), paiement in-app et gestion des mises à jour."
 }
