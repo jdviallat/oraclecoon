@@ -11,7 +11,7 @@ l'oracle des 104 animaux totems.
 
 | Fichier | Rôle |
 |---|---|
-| `latest.json` / `version-android.json` | manifestes de mise à jour interrogés par l'app |
+| `version-android.json` | manifeste de mise à jour interrogé par l'app Android |
 | `version-web.json` | manifeste de la version web |
 | `index.html`, `politique.html`, `acheter.html` | redirections vers le site officiel (anciennes URL, conservées pour les versions déjà installées) |
 
