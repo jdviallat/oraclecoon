@@ -1,6 +1,6 @@
 {
-  "versionCode": 17,
-  "versionName": "1.5.4",
-  "url": "https://github.com/jdviallat/oraclecoon/releases/download/1.5.4/Oraclecoon-1.5.4.apk",
-  "notes": "Partage de carte, invitation à noter, et corrections (vérif MAJ + n° de version)."
+  "versionCode": 18,
+  "versionName": "1.5.5",
+  "url": "https://github.com/jdviallat/oraclecoon/releases/download/1.5.5/Oraclecoon-1.5.5.apk",
+  "notes": "Tirage en croix (5 cartes), tirage relationnel, export du journal en PDF. Corrections navigation et protection des données."
 }
