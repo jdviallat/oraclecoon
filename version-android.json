@@ -1,6 +1,6 @@
 {
-  "versionCode": 22,
-  "versionName": "1.5.9",
-  "url": "https://github.com/jdviallat/oraclecoon/releases/download/1.5.9/Oraclecoon-1.5.9.apk",
-  "notes": "Installateur integre : mise a jour telechargee et installee depuis l app."
+  "versionCode": 23,
+  "versionName": "1.5.10",
+  "url": "https://github.com/jdviallat/oraclecoon/releases/download/1.5.10/Oraclecoon-1.5.10.apk",
+  "notes": "Correctif : numero de version des Reglages."
 }
